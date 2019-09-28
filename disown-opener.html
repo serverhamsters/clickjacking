@@ -1,0 +1,20 @@
+<html>
+<head><title>Content Security Policy</title></head>
+<body>
+	<p>Click on the link below. The Askia website will open. After a while 
+	however the page will suddenly change to the Myforce website. This is a 
+	potential phishing attack vector that the <tt>disown-opener</tt> directive
+	tries to eleminate.</p>
+	<a href="#" id="externallink">Askia</a>
+	
+	<script>
+		document.getElementById("externallink").addEventListener(
+			"click",
+			function(e) {
+				e.preventDefault();
+				var w = window.open("https://askia.com/");
+				setTimeout(function() {
+					w.location.href = "https://myforce.be/";
+				}, 5000)});
+	</script>
+</body>
