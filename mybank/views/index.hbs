@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    
+    <div class="row">
+        <div class="col">
+            <form target="" method="POST">
+            Give money to<br>
+            <input type="text" name="receiver" value="criminal"><br>
+            Amount:<br>
+            <input type="text" name="amount" value="1 000 0000">
+            <input type="submit" value="submit">
+            </form>
+        </div>
+        <div class="col">
+            <form target="" method="POST">
+            Pay rent<br>
+            <input type="text" name="receiver" value="rent"><br>
+            Amount:<br>
+            <input type="text" name="amount" value="800">
+            <input type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1>Previous transactions</h1>
+            <ul>
+                {{#each transactions}}
+                    <li>{{this.amount}} of money spent on {{this.receiver}}</li>
+                {{else}}
+                <p>No transactions</p>
+                {{/each}}
+            </ul>
+            <p><a href="/">Back to homepage</a></p>
+        </div>
+    </div>
+</div>
